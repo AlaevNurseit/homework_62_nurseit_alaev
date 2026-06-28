@@ -1,0 +1,24 @@
+{% extends "issues/base.html" %}
+{% block nav %}
+    <a class="nav-link" href="{% url 'issues:issue_create' %}">Добавить задачу</a>
+{% endblock %}
+{% block content %}
+    <div class="card my-5">
+        <div class="card-header fs-4 text-center py-3">{{ issue.summary }}</div>
+        <div class="card-body">
+            <p>Описание: {{ issue.description }}</p>
+            <p>Статус: {{ issue.status }}</p>
+            <p>Тип: {% for type in issue.types.all %}{{ type }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+            <p>Создано: {{ issue.created_at }}</p>
+            <p>Обновлено: {{ issue.updated_at }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-end gap-2 py-3">
+            <a href="{% url 'issues:issue_update' issue.pk %}" class="btn btn-outline-warning btn-sm">
+                <i class="fa-solid fa-pen"></i> Редактировать
+            </a>
+            <a href="{% url 'issues:issue_list' %}" class="btn btn-outline-secondary btn-sm">
+                Назад
+            </a>
+        </div>
+    </div>
+{% endblock %}

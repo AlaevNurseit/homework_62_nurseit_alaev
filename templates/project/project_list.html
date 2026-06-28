@@ -1,0 +1,66 @@
+{% extends "issues/base.html" %}
+{% block nav %}
+    <a class="nav-link" href="{% url 'issues:project_create' %}">Добавить проект</a>
+{% endblock %}
+{% block content %}
+<div class="border rounded-3 my-4 p-3">
+    <h5>Список проектов</h5>
+    <form class="d-flex" action="" method="GET">
+        {% csrf_token %}
+        {{ search_form }}
+        <button class="btn btn-sm btn-outline-primary" type="submit">Поиск</button>
+    </form>
+</div>
+<div class="row row-cols-md-3 g-4">
+    {% for project in projects %}
+    <div class="col">
+        <div class="card border-secondary h-100 mb-3">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">{{ project.name }}</h5>
+            </div>
+            <div class="card-body text-secondary">
+                <p>Дата начала: {{ project.start_date }}</p>
+                <p>Дата окончания: {{ project.end_date|default:"не указана" }}</p>
+                <div>
+                    <a href="{% url 'issues:project_detail' project.pk %}" class="btn btn-outline-secondary btn-sm">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+                    <a href="{% url 'issues:project_update' project.pk %}" class="btn btn-outline-warning btn-sm">
+                        <i class="fa-solid fa-pen"></i>
+                    </a>
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal{{  project.pk }}">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="deleteModal{{ project.pk }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Удаление проекта</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Вы хотите удалить проект "{{ project.name }}"?</p>
+                        <form action="{% url 'issues:project_delete' project.pk %}" method="POST"
+                              id="delete-form-{{ project.pk }}">
+                            {% csrf_token %}
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                        <button type="submit" form="delete-form-{{ project.pk }}" class="btn btn-danger">Удалить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+        <p>Проекты не найдены</p>
+    {% endfor %}
+    {% include 'partial/paginators.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,239 @@
+[
+{
+  "model": "issues.status",
+  "pk": 1,
+  "fields": {
+    "name": "новый"
+  }
+},
+{
+  "model": "issues.status",
+  "pk": 2,
+  "fields": {
+    "name": "в процессе"
+  }
+},
+{
+  "model": "issues.status",
+  "pk": 3,
+  "fields": {
+    "name": "сделано"
+  }
+},
+{
+  "model": "issues.type",
+  "pk": 1,
+  "fields": {
+    "name": "задача"
+  }
+},
+{
+  "model": "issues.type",
+  "pk": 2,
+  "fields": {
+    "name": "ошибка"
+  }
+},
+{
+  "model": "issues.type",
+  "pk": 3,
+  "fields": {
+    "name": "улучшение"
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.295Z",
+    "updated_at": "2026-06-13T16:42:41.295Z",
+    "summary": "Ошибка входа в систему",
+    "description": "Пользователь не может войти в аккаунт",
+    "status": 1,
+    "project": 1,
+    "types": [
+      2
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.305Z",
+    "updated_at": "2026-06-13T16:42:41.305Z",
+    "summary": "Исправить кнопку",
+    "description": "Кнопка не работает на мобильном",
+    "status": 1,
+    "project": 1,
+    "types": [
+      2
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.307Z",
+    "updated_at": "2026-06-13T16:42:41.307Z",
+    "summary": "Обновить документацию",
+    "description": "Добавить описание всех методов",
+    "status": 3,
+    "project": 1,
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.310Z",
+    "updated_at": "2026-06-13T16:42:41.310Z",
+    "summary": "Баг с формой",
+    "description": "Форма не сохраняет данные",
+    "status": 1,
+    "project": 1,
+    "types": [
+      2
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.312Z",
+    "updated_at": "2026-06-13T16:42:41.312Z",
+    "summary": "Исправить верстку",
+    "description": "Съезжает шапка сайта",
+    "status": 3,
+    "project": 1,
+    "types": [
+      2
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.313Z",
+    "updated_at": "2026-06-13T16:42:41.313Z",
+    "summary": "Ошибка регистрации",
+    "description": "Письмо не отправляется на почту",
+    "status": 1,
+    "project": 1,
+    "types": [
+      2
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 25,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.314Z",
+    "updated_at": "2026-06-13T16:42:41.314Z",
+    "summary": "Обновить зависимости",
+    "description": "Обновить Django до новой версии",
+    "status": 3,
+    "project": 1,
+    "types": [
+      3
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 27,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.315Z",
+    "updated_at": "2026-06-13T16:42:41.315Z",
+    "summary": "Баг с датами",
+    "description": "Неправильный формат даты в форме",
+    "status": 1,
+    "project": 1,
+    "types": [
+      2
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 29,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.316Z",
+    "updated_at": "2026-06-13T16:42:41.316Z",
+    "summary": "Исправить стили",
+    "description": "Тёмная тема отображается неверно",
+    "status": 3,
+    "project": 1,
+    "types": [
+      3
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-06-13T16:42:41.304Z",
+    "updated_at": "2026-06-22T09:59:16.821Z",
+    "summary": "Добавить поиск",
+    "description": "Нужна строка поиска на главной",
+    "status": 3,
+    "project": 1,
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 33,
+  "fields": {
+    "created_at": "2026-06-22T10:05:34.878Z",
+    "updated_at": "2026-06-22T10:05:34.878Z",
+    "summary": "исправление ошибок",
+    "description": "исправление ошибок с прошлого проекта где было 4 статуса вместо 3",
+    "status": 1,
+    "project": 3,
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 34,
+  "fields": {
+    "created_at": "2026-06-22T10:47:24.140Z",
+    "updated_at": "2026-06-22T10:47:24.140Z",
+    "summary": "4",
+    "description": "1 2 3 4 5",
+    "status": 1,
+    "project": 5,
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 35,
+  "fields": {
+    "created_at": "2026-06-22T10:48:52.655Z",
+    "updated_at": "2026-06-22T10:48:52.655Z",
+    "summary": "5",
+    "description": "5 4 3 2 1",
+    "status": 1,
+    "project": 5,
+    "types": [
+      1
+    ]
+  }
+}
+]

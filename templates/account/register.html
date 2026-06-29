@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+<div class="container">
+    <h1>Регистрация</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <a href="{% url 'account:login' %}?next={{ request.GET.next }}">Уже есть аккаунт? Войти</a>
+</div>
+</body>
+</html>
